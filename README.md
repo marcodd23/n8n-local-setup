@@ -14,7 +14,7 @@ A Docker Compose setup for running n8n locally with easy tunnel management.
 
 1. **Clone and start:**
    ```bash
-   git clone <your-repo>
+   git clone https://github.com/marcodd23/n8n-local-setup
    cd n8n
    ./start.sh
    ```
