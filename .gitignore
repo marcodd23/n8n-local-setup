@@ -5,14 +5,16 @@
 .env
 
 # n8n persistent data (local state, DB, credentials)
-n8n-data/
+n8n-data/*
+!n8n-data/.gitkeep
 n8n_data/
 
 # Local working files
-local-files/
+local-files/*
+!local-files/.gitkeep
 
-# Compose override variants
-compose.override.yml.disabled
+# Compose override variants (allow disabled template)
+compose.override.yml
 
 # Logs
 *.log

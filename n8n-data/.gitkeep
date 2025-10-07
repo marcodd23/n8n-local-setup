@@ -1,0 +1,2 @@
+# This file ensures the n8n-data directory is tracked by git
+# n8n will store its database, config, and credentials here
