@@ -1,0 +1,28 @@
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    restart: unless-stopped
+
+    # Default command (no tunnel)
+    # Tunnel mode is added by compose.override.yml when needed
+
+    # Local editor available on http://localhost:5678
+    ports:
+      - "5678:5678"
+
+    environment:
+      # Make sure n8n knows where to keep its persistent config
+      - N8N_USER_FOLDER=/home/node/.n8n
+      
+      # Set timezone (you can change this to your timezone)
+      - TZ=UTC
+      
+      # Tunnel configuration - controlled by .env file
+      - N8N_TUNNEL=${N8N_TUNNEL_ENABLED:-false}
+
+    volumes:
+      # App state: workflows, credentials, users, executions, settings
+      - ./n8n-data:/home/node/.n8n
+
+      # Your working file space for nodes (CSV/XLSX/attachments/etc.)
+      - ./local-files:/files

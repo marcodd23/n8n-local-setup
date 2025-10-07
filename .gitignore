@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+
+# Env and secrets
+.env
+
+# n8n persistent data (local state, DB, credentials)
+n8n-data/
+n8n_data/
+
+# Local working files
+local-files/
+
+# Compose override variants
+compose.override.yml.disabled
+
+# Logs
+*.log
